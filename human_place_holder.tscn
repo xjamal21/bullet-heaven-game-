@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmsh2itt64ylx"]
+
+[ext_resource type="Texture2D" uid="uid://d1xym687jphh" path="res://assets/characters/placeholder-human.png" id="1_efstt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx8n8"]
+radius = 18.0
+height = 84.0
+
+[node name="HumanPlaceHolder" type="CharacterBody2D" unique_id=1659507915]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1397409686]
+position = Vector2(19, 62)
+shape = SubResource("CapsuleShape2D_bx8n8")
+
+[node name="PlaceholderHuman" type="Sprite2D" parent="." unique_id=1779626885]
+position = Vector2(25.000002, 53)
+scale = Vector2(0.2326923, 0.21346153)
+texture = ExtResource("1_efstt")
