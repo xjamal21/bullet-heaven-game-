@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dd6ojur3vyolm"]
+
+[ext_resource type="Script" uid="uid://cs3gtwdpighon" path="res://gdscripts/enemies.gd" id="1_17ah7"]
+[ext_resource type="Texture2D" uid="uid://bufkvdr8y01bx" path="res://assets/characters/placeholde-monster.png" id="1_gu34h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gu34h")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bx8n8"]
+radius = 22.0
+
+[node name="Mob" type="CharacterBody2D" unique_id=80493351]
+collision_layer = 2
+script = ExtResource("1_17ah7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1184273010]
+position = Vector2(3, 9.000002)
+scale = Vector2(0.1826923, 0.16346154)
+sprite_frames = SubResource("SpriteFrames_5h11f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=14925968]
+position = Vector2(-3, 3)
+shape = SubResource("CircleShape2D_bx8n8")

@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://cmsh2itt64ylx"]
 
 [ext_resource type="Texture2D" uid="uid://d1xym687jphh" path="res://assets/characters/placeholder-human.png" id="1_efstt"]
+[ext_resource type="PackedScene" uid="uid://c6sva36vlxi31" path="res://tscnfiles/gun.tscn" id="2_0h2p5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx8n8"]
 radius = 18.0
 height = 84.0
 
-[node name="HumanPlaceHolder" type="CharacterBody2D" unique_id=1659507915]
+[node name="Player" type="CharacterBody2D" unique_id=1659507915]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Gun" parent="." unique_id=457516597 instance=ExtResource("2_0h2p5")]
+position = Vector2(25.000004, 67.00001)
+rotation = -3.1295247
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1397409686]
 position = Vector2(19, 62)
