@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cjw38u45ohdrq"]
+
+[ext_resource type="Texture2D" uid="uid://bqn6hl4ytmh2d" path="res://assets/characters/damaged.png" id="1_sckf2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq4jd"]
+atlas = ExtResource("1_sckf2")
+region = Rect2(1560, 0, 520, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05vq6"]
+atlas = ExtResource("1_sckf2")
+region = Rect2(1040, 0, 520, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gj46"]
+atlas = ExtResource("1_sckf2")
+region = Rect2(520, 0, 520, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1p5p"]
+atlas = ExtResource("1_sckf2")
+region = Rect2(0, 0, 520, 520)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq4jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05vq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gj46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1p5p")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MobAnimation" type="AnimatedSprite2D" unique_id=1419405417]
+sprite_frames = SubResource("SpriteFrames_5h11f")
