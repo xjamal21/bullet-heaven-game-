@@ -1037,7 +1037,7 @@ sources/0 = SubResource("TileSetAtlasSource_yx7mw")
 
 [sub_resource type="Curve2D" id="Curve2D_pgba1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -52, -68, 0, 0, 0, 0, 1225, -62, 0, 0, 0, 0, 1225, 734, 0, 0, 0, 0, -71, 732)
+"points": PackedVector2Array(0, 0, 0, 0, -23, -16, 0, 0, 0, 0, 1164, -14, 0, 0, 0, 0, 1179, 680, 0, 0, 0, 0, -13, 692)
 }
 point_count = 4
 
@@ -1057,11 +1057,11 @@ curve = SubResource("Curve2D_pgba1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1939267320]
 unique_name_in_owner = true
-position = Vector2(-52, -68)
-rotation = 0.004698477
+position = Vector2(-23, -16)
+rotation = 0.0016849183
 
 [node name="Timer" type="Timer" parent="." unique_id=707945112]
-wait_time = 1.0099999999999998
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
