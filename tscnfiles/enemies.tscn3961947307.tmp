@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dd6ojur3vyolm"]
+
+[ext_resource type="Script" uid="uid://cs3gtwdpighon" path="res://gdscripts/enemies.gd" id="1_17ah7"]
+[ext_resource type="Texture2D" uid="uid://bufkvdr8y01bx" path="res://assets/characters/placeholde-monster.png" id="1_gu34h"]
+[ext_resource type="Texture2D" uid="uid://bqn6hl4ytmh2d" path="res://assets/characters/damaged.png" id="2_17ah7"]
+[ext_resource type="PackedScene" uid="uid://qhi7jtvit8tk" path="res://tscnfiles/scoretracker.tscn" id="4_fhwsm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cna5"]
+atlas = ExtResource("2_17ah7")
+region = Rect2(1560, 0, 520, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhwsm"]
+atlas = ExtResource("2_17ah7")
+region = Rect2(1560, 0, 520, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi7fe"]
+atlas = ExtResource("2_17ah7")
+region = Rect2(1040, 0, 520, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m711g"]
+atlas = ExtResource("2_17ah7")
+region = Rect2(520, 0, 520, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yu35"]
+atlas = ExtResource("2_17ah7")
+region = Rect2(0, 0, 520, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf4gn"]
+atlas = ExtResource("1_gu34h")
+region = Rect2(0, 0, 520, 520)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cna5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhwsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi7fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m711g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yu35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf4gn")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bx8n8"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5h11f"]
+radius = 23.021729
+
+[node name="Mob" type="CharacterBody2D" unique_id=80493351]
+collision_layer = 2
+script = ExtResource("1_17ah7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1184273010]
+position = Vector2(3, 9.000002)
+scale = Vector2(0.1826923, 0.16346154)
+sprite_frames = SubResource("SpriteFrames_5h11f")
+animation = &"hurt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=14925968]
+position = Vector2(-3, 3)
+shape = SubResource("CircleShape2D_bx8n8")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=405810910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1690517973]
+position = Vector2(-2, 3)
+shape = SubResource("CircleShape2D_5h11f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1440154038]
+
+[node name="scoretracker" parent="CanvasLayer" unique_id=565279697 instance=ExtResource("4_fhwsm")]
+position = Vector2(25, 9)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://qhi7jtvit8tk"]
+
+[ext_resource type="Script" uid="uid://6w5y1uhxjlri" path="res://gdscripts/scoretracker.gd" id="1_0xdlh"]
+
+[node name="score" type="RichTextLabel" unique_id=557915218 groups=["score_label"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Score : 0"
+script = ExtResource("1_0xdlh")

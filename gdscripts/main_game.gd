@@ -1,4 +1,7 @@
+
 extends Node2D
+
+var score: int
 
 func spawn_mob():
 	var new_mob = preload("res://tscnfiles/enemies.tscn").instantiate()

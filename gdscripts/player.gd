@@ -6,7 +6,6 @@ extends CharacterBody2D
 @onready var max_health: int = 100
 var strength: int = 10
 var current_health: int
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 

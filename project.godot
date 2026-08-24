@@ -21,6 +21,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/canvas_textures/default_texture_filter=0
 
+[global_group]
+
+score_label=""
+
 [input]
 
 move_left={
