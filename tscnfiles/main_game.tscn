@@ -9,8 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://dtog1kqqcl7si" path="res://assets/ui/healthbar.png" id="5_kaaer"]
 [ext_resource type="Texture2D" uid="uid://7lwxrkrrkh4w" path="res://assets/ui/bar.png" id="6_k3bpy"]
 [ext_resource type="Script" uid="uid://cceutq7lcvjuk" path="res://gdscripts/bananastrack.gd" id="8_k3bpy"]
+[ext_resource type="Script" uid="uid://5ll0f2cix31i" path="res://gdscripts/health_bar.gd" id="8_mwx11"]
 [ext_resource type="Texture2D" uid="uid://u7g7i48bdwtv" path="res://assets/ui/SettingsLogo.png" id="9_r68jj"]
+[ext_resource type="Script" uid="uid://cjsx3ldnuda2n" path="res://tscnfiles/wavetrack.gd" id="10_4lmjw"]
 [ext_resource type="Texture2D" uid="uid://bqdnlsh1qm1d1" path="res://assets/ui/SettingsLogoPressed.png" id="10_r4ly5"]
+[ext_resource type="Script" uid="uid://bjsbwe5jkiusy" path="res://tscnfiles/kill_count.gd" id="11_mwx11"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yx7mw"]
 texture = ExtResource("1_fr2d1")
@@ -3932,21 +3935,6 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="GDScript" id="GDScript_pgba1"]
-script/source = "extends TextureProgressBar 
-
-@onready var player = get_node(\"/root/Game/Player\")
-
-func _ready() -> void:
-	player.Change_Player_Health.connect(_update_healthbar)
-	max_value = player.max_health
-	print(max_value)
-
-func _update_healthbar():
-	print(\"Receive update\")
-	value = player.current_health
-"
-
 [node name="Game" type="Node2D" unique_id=1306836178]
 script = ExtResource("1_fhp6l")
 
@@ -3967,6 +3955,7 @@ position = Vector2(-23, -16)
 rotation = 0.0016849183
 
 [node name="Timer" type="Timer" parent="." unique_id=707945112]
+wait_time = 0.1
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1364822522]
@@ -3980,7 +3969,7 @@ value = 100.0
 texture_under = ExtResource("5_kaaer")
 texture_progress = ExtResource("6_k3bpy")
 texture_progress_offset = Vector2(6, 2)
-script = SubResource("GDScript_pgba1")
+script = ExtResource("8_mwx11")
 
 [node name="score" parent="CanvasLayer" unique_id=1299241255 instance=ExtResource("5_k3bpy")]
 offset_left = 21.0
@@ -3994,8 +3983,26 @@ offset_top = 57.0
 offset_right = 141.0
 offset_bottom = 97.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Bananas "
+text = "Bananas: "
 script = ExtResource("8_k3bpy")
+
+[node name="Wave" type="RichTextLabel" parent="CanvasLayer" unique_id=835392930 groups=["wave_check"]]
+offset_left = 20.0
+offset_top = 77.0
+offset_right = 141.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Wave: "
+script = ExtResource("10_4lmjw")
+
+[node name="KillCount" type="RichTextLabel" parent="CanvasLayer" unique_id=1019006040]
+offset_left = 20.0
+offset_top = 97.0
+offset_right = 141.0
+offset_bottom = 137.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Kills: "
+script = ExtResource("11_mwx11")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=848225105]
 offset_left = 1109.0

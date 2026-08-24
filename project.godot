@@ -25,6 +25,8 @@ window/canvas_textures/default_texture_filter=0
 
 score_label=""
 player=""
+wave_check="Log enemies killed and check if wave is cleared"
+enemy_tracker=""
 
 [input]
 
