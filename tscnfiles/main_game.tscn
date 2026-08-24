@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://diabq50i853aa" path="res://gdscripts/player.gd" id="3_xbfd6"]
 [ext_resource type="Texture2D" uid="uid://dtog1kqqcl7si" path="res://assets/ui/healthbar.png" id="5_kaaer"]
 [ext_resource type="Texture2D" uid="uid://7lwxrkrrkh4w" path="res://assets/ui/bar.png" id="6_k3bpy"]
-[ext_resource type="Script" uid="uid://5ll0f2cix31i" path="res://tscnfiles/health_bar.gd" id="7_k82tj"]
+[ext_resource type="Script" uid="uid://5ll0f2cix31i" path="res://gdscripts/health_bar.gd" id="7_k82tj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yx7mw"]
 texture = ExtResource("1_fr2d1")
