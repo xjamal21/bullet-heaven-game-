@@ -7,6 +7,8 @@ extends CharacterBody2D
 var strength: int = 10
 @export var current_health: int
 
+var bananas: int = 0
+
 signal Change_Player_Health
 
 const SPEED = 300.0

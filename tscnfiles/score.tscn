@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://gdscripts/scoretracker.gd" id="1_3iglp"]
 
-[node name="score" type="RichTextLabel" unique_id=1299241255]
+[node name="score" type="RichTextLabel" unique_id=1299241255 groups=["score_label"]]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
