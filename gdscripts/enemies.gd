@@ -21,16 +21,20 @@ func take_damage():
 	if health == 0:
 		spawn_banana()
 		get_tree().call_group("score_label", "add_score", points_forkill)
+		get_tree().call_group("wave_check", "wave_clear_check")
 		queue_free()
 	else:
 		$AnimatedSprite2D.play("hurt")
+		
+func insta_kill():
+	health -= health
+	queue_free()
 		
 func spawn_banana():
 	if banana_scene:
 		var banana = banana_scene.instantiate()
 		banana.global_position = global_position
 		get_tree().root.get_child(0).add_child(banana)
-
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
