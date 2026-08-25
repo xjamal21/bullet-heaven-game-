@@ -24,6 +24,7 @@ func take_damage(amount: int) -> void:
 	
 	if current_health <= 0:
 		die()
+		get_node("../GameOver").game_over()
 	
 func die() -> void:
 	print("player died")
