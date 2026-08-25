@@ -11,13 +11,13 @@
 [ext_resource type="Script" uid="uid://cceutq7lcvjuk" path="res://gdscripts/bananastrack.gd" id="8_k3bpy"]
 [ext_resource type="Script" uid="uid://5ll0f2cix31i" path="res://gdscripts/health_bar.gd" id="8_mwx11"]
 [ext_resource type="Texture2D" uid="uid://u7g7i48bdwtv" path="res://assets/ui/SettingsLogo.png" id="9_r68jj"]
-[ext_resource type="Script" uid="uid://cjsx3ldnuda2n" path="res://tscnfiles/wavetrack.gd" id="10_4lmjw"]
+[ext_resource type="Script" uid="uid://cjsx3ldnuda2n" path="res://gdscripts/wavetrack.gd" id="10_4lmjw"]
 [ext_resource type="Texture2D" uid="uid://bqdnlsh1qm1d1" path="res://assets/ui/SettingsLogoPressed.png" id="10_r4ly5"]
-[ext_resource type="Script" uid="uid://bjsbwe5jkiusy" path="res://tscnfiles/kill_count.gd" id="11_mwx11"]
+[ext_resource type="Script" uid="uid://bjsbwe5jkiusy" path="res://gdscripts/kill_count.gd" id="11_mwx11"]
 [ext_resource type="Texture2D" uid="uid://dklf11qm7mv14" path="res://assets/ui/shopmenu.png" id="15_4exr0"]
 [ext_resource type="Texture2D" uid="uid://cyrmjepe1y03i" path="res://assets/ui/shopmenupressed.png" id="16_rh43n"]
 [ext_resource type="Texture2D" uid="uid://b8ky846uufm7x" path="res://assets/ui/shopmenuhovered.png" id="17_axlng"]
-[ext_resource type="Script" uid="uid://d4fknbtecb8mq" path="res://tscnfiles/game_over.gd" id="18_3x74b"]
+[ext_resource type="Script" uid="uid://d4fknbtecb8mq" path="res://gdscripts/game_over.gd" id="18_3x74b"]
 [ext_resource type="Texture2D" uid="uid://cmj6l80w66kdb" path="res://assets/background/temporarygameoverbg.png" id="19_pf6v2"]
 [ext_resource type="Texture2D" uid="uid://df5cppdtgghrl" path="res://assets/ui/MainMenu.png" id="20_kulx3"]
 [ext_resource type="Texture2D" uid="uid://toyy27cx0ubk" path="res://assets/items/MainMenuPressed.png" id="21_4ndpw"]
@@ -28,6 +28,13 @@
 [ext_resource type="Texture2D" uid="uid://xnir1u3ndx0m" path="res://assets/sfx/Quit.png" id="26_6w68q"]
 [ext_resource type="Texture2D" uid="uid://4neg6d6hnfe8" path="res://assets/ui/QuitPressed.png" id="27_rnvfk"]
 [ext_resource type="Texture2D" uid="uid://cxjr8ncsmn8ed" path="res://assets/sfx/QuitHovered.png" id="28_wpopy"]
+[ext_resource type="Texture2D" uid="uid://crd8vxk6s5i4x" path="res://assets/ui/Resume.png" id="29_60qr6"]
+[ext_resource type="Script" uid="uid://wpkd8ob1uryu" path="res://gdscripts/menu.gd" id="29_sbrmb"]
+[ext_resource type="Texture2D" uid="uid://cas60pmyavfll" path="res://assets/ui/ResumePressed.png" id="30_sbrmb"]
+[ext_resource type="Texture2D" uid="uid://dtkwlftuhm2t2" path="res://tscnfiles/ResumeHovered.png" id="31_m8xnv"]
+[ext_resource type="Texture2D" uid="uid://b0kcg5kewyq24" path="res://assets/sfx/Settings.png" id="32_164tm"]
+[ext_resource type="Texture2D" uid="uid://b7p8ihqa0cv4i" path="res://assets/ui/SettingsPressed.png" id="33_1m5ds"]
+[ext_resource type="Texture2D" uid="uid://71t1pjglk6mo" path="res://assets/ui/SettingsHovered.png" id="34_imxgn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yx7mw"]
 texture = ExtResource("1_fr2d1")
@@ -4018,7 +4025,8 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Kills: "
 script = ExtResource("11_mwx11")
 
-[node name="Settings" type="TextureButton" parent="CanvasLayer" unique_id=848225105]
+[node name="SettingsLogo" type="TextureButton" parent="CanvasLayer" unique_id=848225105]
+process_mode = 3
 offset_left = 1109.0
 offset_top = 2.0
 offset_right = 1141.0
@@ -4037,6 +4045,7 @@ texture_hover = ExtResource("17_axlng")
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=1162898461]
 process_mode = 3
+visible = false
 script = ExtResource("18_3x74b")
 
 [node name="Sprite2D" type="Sprite2D" parent="GameOver" unique_id=1241602139]
@@ -4080,5 +4089,62 @@ offset_bottom = 234.0
 theme_override_font_sizes/font_size = 56
 text = "Game Over"
 
+[node name="Menu" type="CanvasLayer" parent="." unique_id=1000694835]
+process_mode = 3
+script = ExtResource("29_sbrmb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Menu" unique_id=185987626]
+position = Vector2(567, 331.00003)
+scale = Vector2(1.5682642, 2.1426961)
+texture = ExtResource("19_pf6v2")
+
+[node name="Resume" type="TextureButton" parent="Menu" unique_id=838983466]
+offset_left = 435.0
+offset_top = 206.0
+offset_right = 691.0
+offset_bottom = 270.0
+texture_normal = ExtResource("29_60qr6")
+texture_pressed = ExtResource("30_sbrmb")
+texture_hover = ExtResource("31_m8xnv")
+
+[node name="Restart" type="TextureButton" parent="Menu" unique_id=105499474]
+offset_left = 434.0
+offset_top = 283.0
+offset_right = 690.0
+offset_bottom = 347.0
+texture_normal = ExtResource("23_du1b3")
+texture_pressed = ExtResource("24_m3cxp")
+texture_hover = ExtResource("25_w47a4")
+
+[node name="Settings" type="TextureButton" parent="Menu" unique_id=405165028]
+offset_left = 434.0
+offset_top = 361.0
+offset_right = 690.0
+offset_bottom = 425.0
+texture_normal = ExtResource("32_164tm")
+texture_pressed = ExtResource("33_1m5ds")
+texture_hover = ExtResource("34_imxgn")
+
+[node name="MainMenu" type="TextureButton" parent="Menu" unique_id=681623962]
+offset_left = 434.0
+offset_top = 439.0
+offset_right = 690.0
+offset_bottom = 503.0
+texture_normal = ExtResource("20_kulx3")
+texture_pressed = ExtResource("21_4ndpw")
+texture_hover = ExtResource("22_dn455")
+
+[node name="Label" type="Label" parent="Menu" unique_id=1801201445]
+offset_left = 514.00006
+offset_top = 76.0
+offset_right = 559.00006
+offset_bottom = 99.0
+scale = Vector2(1.9584728, 1.4902421)
+text = "Menu"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/SettingsLogo" to="Menu" method="_on_settings_logo_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsLogo" to="Menu" method="_on_settings_pressed"]
 [connection signal="pressed" from="GameOver/Restart" to="GameOver" method="_on_restart_pressed"]
+[connection signal="pressed" from="Menu/Resume" to="Menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/MainMenu" to="Menu" method="_on_main_menu_pressed"]
