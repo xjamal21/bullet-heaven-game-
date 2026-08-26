@@ -22,7 +22,13 @@ func _on_resume_pressed() -> void:
 
 func _on_settings_logo_pressed() -> void:
 	togglepause()
+	
 
 func _on_main_menu_pressed() -> void:
 	togglepause()
 	get_tree().change_scene_to_file("res://tscnfiles/main_menu.tscn")
+
+
+func _on_restart_pressed() -> void:
+	togglepause()
+	get_tree().reload_current_scene()

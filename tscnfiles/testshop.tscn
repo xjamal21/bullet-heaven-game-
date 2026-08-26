@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bn3s05s24ncp8"]
+
+[ext_resource type="Script" uid="uid://cepv14mfgs5qe" path="res://gdscripts/shop.gd" id="1_nr6y4"]
+[ext_resource type="Texture2D" uid="uid://ckghn374780kx" path="res://assets/ui/healthcategory.png" id="2_iqcwr"]
+
+[node name="Node2D" type="CanvasLayer" unique_id=1340316376]
+process_mode = 3
+script = ExtResource("1_nr6y4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1114772190]
+offset_left = 135.0
+offset_top = 61.0
+offset_right = 1020.0
+offset_bottom = 596.0
+color = Color(0.3172787, 0.31727865, 0.31727865, 1)
+
+[node name="ShopBackground" type="TextureRect" parent="." unique_id=1839259881]
+process_mode = 3
+offset_left = 149.0
+offset_top = 72.0
+offset_right = 999.0
+offset_bottom = 572.0
+texture = ExtResource("2_iqcwr")
+
+[node name="MainLayout" type="HBoxContainer" parent="ShopBackground" unique_id=1119838764]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftSidebar" type="VBoxContainer" parent="ShopBackground/MainLayout" unique_id=926515141]
+process_mode = 3
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="ItemCategory" type="Control" parent="ShopBackground/MainLayout/LeftSidebar" unique_id=996986368]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureButton" type="TextureButton" parent="ShopBackground/MainLayout/LeftSidebar/ItemCategory" unique_id=1468129342]
+layout_mode = 0
+offset_right = 180.0
+
+[node name="Button" type="Button" parent="ShopBackground/MainLayout/LeftSidebar/ItemCategory" unique_id=901901613]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 1
+offset_left = 43.0
+offset_top = 48.0
+offset_right = 143.0
+offset_bottom = 128.0
+size_flags_horizontal = 4
+toggle_mode = true
+metadata/category = "Health"
+
+[node name="Button2" type="Button" parent="ShopBackground/MainLayout/LeftSidebar/ItemCategory" unique_id=1729984853]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 282.0
+offset_right = 146.0
+offset_bottom = 362.0
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 4
+metadata/category = "Attack"
+
+[node name="StatTracker" type="VBoxContainer" parent="ShopBackground/MainLayout/LeftSidebar" unique_id=945233437]
+layout_mode = 2
+
+[node name="RightSidebar" type="VBoxContainer" parent="ShopBackground/MainLayout" unique_id=1747256464]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ShopBackground/MainLayout/RightSidebar" unique_id=1595644749]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="ShopBackground/MainLayout/RightSidebar/ScrollContainer" unique_id=1136385849]
+layout_mode = 2
