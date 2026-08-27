@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bhfoql1eawtdp"]
+
+[ext_resource type="Script" uid="uid://bc4o1wlgo1p77" path="res://item_card.gd" id="1_mmei7"]
+
+[node name="ItemCard" type="Button" unique_id=2067411088]
+custom_minimum_size = Vector2(120, 129)
+offset_right = 120.0
+offset_bottom = 140.0
+script = ExtResource("1_mmei7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=823854264]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=141316971]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=812656269]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=245060716]
+layout_mode = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
