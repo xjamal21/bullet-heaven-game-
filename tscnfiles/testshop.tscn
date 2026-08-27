@@ -74,18 +74,22 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RightSidebar" type="VBoxContainer" parent="ShopBackground/MainLayout" unique_id=1747256464]
+[node name="RightSidebar" type="VBoxContainer" parent="." unique_id=1747256464]
 custom_minimum_size = Vector2(400, 40)
-layout_mode = 2
+offset_left = 407.0
+offset_top = 122.00001
+offset_right = 807.0
+offset_bottom = 622.0
+scale = Vector2(1.2408658, 1.1535478)
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ShopBackground/MainLayout/RightSidebar" unique_id=1595644749]
+[node name="ScrollContainer" type="ScrollContainer" parent="RightSidebar" unique_id=1595644749]
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="ShopBackground/MainLayout/RightSidebar/ScrollContainer" unique_id=1136385849]
+[node name="GridContainer" type="GridContainer" parent="RightSidebar/ScrollContainer" unique_id=1136385849]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

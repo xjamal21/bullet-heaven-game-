@@ -1,11 +1,11 @@
 extends CanvasLayer
 
 @onready var shop_background: TextureRect = $ShopBackground
-@onready var item_grid: GridContainer = $ShopBackground/MainLayout/RightSidebar/ScrollContainer/GridContainer
+@onready var item_grid: GridContainer = $RightSidebar/ScrollContainer/GridContainer
 @onready var category_button: Control = $ShopBackground/MainLayout/LeftSidebar/ItemCategory
 @onready var shop_ui: CanvasLayer = $ShopUI
 
-@export var item_card_scene: PackedScene = preload("res://ItemCard.tscn")
+@export var item_card_scene: PackedScene = preload("res://tscnfiles/ItemCard.tscn")
 
 var category_background: Dictionary = {
 	"Health": preload("res://assets/ui/healthcategory.png"),
