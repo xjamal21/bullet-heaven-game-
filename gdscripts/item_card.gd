@@ -23,3 +23,13 @@ func setup(data: Dictionary) -> void:
 	
 func _on_pressed() -> void:
 	item_clicked.emit(card_data)
+
+
+func _on_mouse_entered() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.05, 1.05), 0.1)
+
+
+func _on_mouse_exited() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1)
