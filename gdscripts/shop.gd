@@ -17,8 +17,7 @@ var shop_database: Array[Dictionary] = [
 		"name": "Health Potion",
 		"price": 50,
 		"category": "Health",
-		"description": "Restore 50Hp",
-		"icon": preload("res://assets/items/banana.png")
+		"icon": preload("res://assets/items/gun.png")
 	}
 ]
 

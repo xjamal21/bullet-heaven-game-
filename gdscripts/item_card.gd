@@ -1,17 +1,15 @@
-extends Button
+extends TextureButton
 
 signal item_clicked(item_data: Dictionary)
 
-@onready var icon_rect: TextureRect = $VBoxContainer/TextureRect
+@onready var icon_rect: TextureRect = $TextureRect
 @onready var name_label: Label = $VBoxContainer/Label
-@onready var desc_label: Label = $VBoxContainer/Label2
 
 var card_data: Dictionary = {}
 
 func setup(data: Dictionary) -> void:
 	card_data = data
 	name_label.text = data.get("name", "Item")
-	desc_label.text = data.get("description", "")
 	icon_rect.texture = data.get("icon", null)
 	
 	var loaded_icon = data.get("icon", null)
