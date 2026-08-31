@@ -4,22 +4,21 @@ extends CharacterBody2D
 @export var map_min: Vector2 = Vector2(0, 0)
 @export var map_max: Vector2 = Vector2(1152, 648)
 @export var max_health: int = 100
-var strength: int = 10
 @export var current_health: int
+@export var SPEED: float = 200.0
+@export var armor: float = 10.0
+const JUMP_VELOCITY = -400.0
+var bananas: int = 0
+var strength: int = 10
 
 var inventory: Array[ItemData] = []
 @export var max_slots: int = 6
 
 signal inventory_changed
-
-var bananas: int = 0
-
 signal Change_Player_Health
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
 func _ready() -> void:
+	Global.active_player = self
 	current_health = max_health
 	
 func take_damage(amount: int) -> void: 
@@ -46,3 +45,20 @@ func _physics_process(delta: float) -> void:
 	var margin = 16.0
 	global_position.x = clamp(global_position.x, viewport_rect.position.x + margin, viewport_rect.end.x - margin)
 	global_position.y = clamp(global_position.y, viewport_rect.position.y + margin, viewport_rect.end.y - margin)
+
+
+func apply_item_stats(item: ItemData) -> bool:
+	if inventory.size() < max_slots:
+		inventory.append(item)
+		item_effects(item)
+		inventory_changed.emit()
+		return true
+	
+	else:
+		return false
+		
+func item_effects(item: ItemData) -> void:
+	if item.stat_boost.has("speed"):
+		SPEED += item.stat_boost["speed"]
+		
+		
