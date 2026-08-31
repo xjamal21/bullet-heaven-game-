@@ -7,6 +7,11 @@ extends CharacterBody2D
 var strength: int = 10
 @export var current_health: int
 
+var inventory: Array[ItemData] = []
+@export var max_slots: int = 6
+
+signal inventory_changed
+
 var bananas: int = 0
 
 signal Change_Player_Health
