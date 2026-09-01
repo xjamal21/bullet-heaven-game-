@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://my1ci7scxpvk"
-path="res://.godot/imported/ResumePressed.png-f449cc05b4305e932a9d51b0c7813926.ctex"
+uid="uid://bbpdqe7qvwsyd"
+path="res://.godot/imported/slotsinventory.png-60286511376bae59aebb624b0dc8d44a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscnfiles/ResumePressed.png"
-dest_files=["res://.godot/imported/ResumePressed.png-f449cc05b4305e932a9d51b0c7813926.ctex"]
+source_file="res://assets/ui/slotsinventory.png"
+dest_files=["res://.godot/imported/slotsinventory.png-60286511376bae59aebb624b0dc8d44a.ctex"]
 
 [params]
 

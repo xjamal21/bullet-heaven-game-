@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://em7i3iumt8g1"]
+
+[ext_resource type="Texture2D" uid="uid://bbpdqe7qvwsyd" path="res://assets/ui/slotsinventory.png" id="1_v7gke"]
+
+[node name="Grid" type="Control" unique_id=448585978]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventorySlots" type="TextureRect" parent="." unique_id=524451150]
+layout_mode = 0
+offset_right = 51.0
+offset_bottom = 50.0
+texture = ExtResource("1_v7gke")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1019855273]
+layout_mode = 0
+offset_left = 55.0
+offset_right = 55.0
+offset_bottom = 50.0
