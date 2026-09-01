@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cepv14mfgs5qe" path="res://gdscripts/shop.gd" id="1_nr6y4"]
 [ext_resource type="Texture2D" uid="uid://ckghn374780kx" path="res://assets/ui/healthcategory.png" id="2_iqcwr"]
+[ext_resource type="Script" uid="uid://2ofoqnsquybw" path="res://tscnfiles/grid_container.gd" id="3_iqcwr"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1340316376]
 process_mode = 3
@@ -67,9 +68,6 @@ size_flags_horizontal = 4
 theme_override_constants/h_separation = 4
 metadata/category = "Attack"
 
-[node name="StatTracker" type="VBoxContainer" parent="ShopBackground/MainLayout/LeftSidebar" unique_id=945233437]
-layout_mode = 2
-
 [node name="Control" type="Control" parent="ShopBackground/MainLayout" unique_id=1359433631]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -94,3 +92,32 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1715067535]
+offset_left = 175.0
+offset_top = 465.0
+offset_right = 315.0
+offset_bottom = 560.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = -5
+script = ExtResource("3_iqcwr")
+
+[node name="Health" type="Label" parent="GridContainer" unique_id=1233664559]
+layout_mode = 2
+text = "Health : 0"
+
+[node name="MP" type="Label" parent="GridContainer" unique_id=28695817]
+layout_mode = 2
+text = "Magic Power : 0"
+
+[node name="Attack" type="Label" parent="GridContainer" unique_id=1259315550]
+layout_mode = 2
+text = "Attack Damage : 0"
+
+[node name="Currency" type="Label" parent="GridContainer" unique_id=494436317]
+layout_mode = 2
+text = "Bananas : 0"
+
+[node name="Speed" type="Label" parent="GridContainer" unique_id=737975250]
+layout_mode = 2
+text = "Speed : 200"
