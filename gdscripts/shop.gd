@@ -15,7 +15,7 @@ var category_background: Dictionary = {
 var shop_database: Array[Dictionary] = [
 	{
 		"name": "Health Potion",
-		"price": 50,
+		"cost": 50,
 		"category": "Health",
 		"icon": preload("res://assets/items/gun.png")
 	}

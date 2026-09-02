@@ -121,3 +121,10 @@ text = "Bananas : 0"
 [node name="Speed" type="Label" parent="GridContainer" unique_id=737975250]
 layout_mode = 2
 text = "Speed : 200"
+
+[node name="WarningLabel" type="Label" parent="." unique_id=1671175092]
+offset_left = 384.0
+offset_top = 280.99997
+offset_right = 424.0
+offset_bottom = 303.99997
+scale = Vector2(4.2897143, 2.1852329)
