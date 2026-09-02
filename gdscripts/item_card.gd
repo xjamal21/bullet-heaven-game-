@@ -54,7 +54,6 @@ func _on_pressed() -> void:
 		
 func show_warning(msg: String) -> void:
 	if not warning_label:
-		# Search the active scene root directly
 		var root = get_tree().current_scene
 		warning_label = root.find_child("WarningLabel", true, false)
 		

@@ -22,7 +22,7 @@ var shop_database: Array[Dictionary] = [
 	,
 	{
 		"name": "Health Pack",
-		"cost": 0,
+		"cost": 10,
 		"category": "Health",
 		"icon": preload("res://assets/items/banana.png")
 	}
@@ -66,7 +66,13 @@ func filter_items_by_category(category_name: String) -> void:
 			item_card.visible = true
 			
 func _on_item_clicked(item_data: Dictionary) -> void:
-	print("Player clicked on: ", item_data["name"])
+	if Global.active_player:
+		var success = Global.active_player.apply_item_stats(item_data)
+		
+		if success:
+			print("Success")
+		else:
+			print("You alreadyd have it ")
 
 func _on_texture_button_pressed() -> void:
 	if visible:
