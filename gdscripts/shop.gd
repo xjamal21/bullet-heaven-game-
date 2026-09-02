@@ -19,6 +19,13 @@ var shop_database: Array[Dictionary] = [
 		"category": "Health",
 		"icon": preload("res://assets/items/gun.png")
 	}
+	,
+	{
+		"name": "Health Pack",
+		"cost": 0,
+		"category": "Health",
+		"icon": preload("res://assets/items/banana.png")
+	}
 ]
 
 func _ready() -> void:
