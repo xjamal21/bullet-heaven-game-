@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://tw6q8pcxcncf"]
 
+[ext_resource type="Texture2D" uid="uid://u7g7i48bdwtv" path="res://assets/ui/SettingsLogo.png" id="1_hfgsu"]
+
 [node name="Control" type="CanvasLayer" unique_id=1895987391]
 
 [node name="Control" type="Control" parent="." unique_id=754648083]
@@ -15,24 +17,29 @@ offset_bottom = 40.0
 
 [node name="PhonePanel" type="Panel" parent="Control" unique_id=24492611]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 241.0
+offset_bottom = 249.0
 
 [node name="TextureRect" type="TextureRect" parent="Control/PhonePanel" unique_id=878156728]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 243.0
+offset_bottom = 249.0
 
 [node name="GridContainer" type="GridContainer" parent="Control/PhonePanel" unique_id=49536736]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 22.0
+offset_top = 21.0
+offset_right = 216.0
+offset_bottom = 87.0
+columns = 2
 
 [node name="Gamblers" type="TextureButton" parent="Control/PhonePanel/GridContainer" unique_id=662236474]
 layout_mode = 2
+texture_normal = ExtResource("1_hfgsu")
 
 [node name="MP4" type="TextureButton" parent="Control/PhonePanel/GridContainer" unique_id=155653344]
 layout_mode = 2
+texture_normal = ExtResource("1_hfgsu")
 
 [node name="Doomscroll" type="TextureButton" parent="Control/PhonePanel/GridContainer" unique_id=510889446]
 layout_mode = 2
